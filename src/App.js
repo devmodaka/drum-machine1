@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import DrumPad from './components/DrumPad';
+import Display from './components/Display';
+import { Container, Row, Col } from 'react-bootstrap';
+import './App.scss';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="drum-machine" id="drum-machine">
+      <Row>
+        <Col md={6}>
+          <DrumPad />
+        </Col>
+        <Col md={6}>
+          <Display />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
